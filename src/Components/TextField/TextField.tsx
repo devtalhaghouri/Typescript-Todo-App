@@ -3,6 +3,7 @@ import React from "react";
 interface TextFieldProps {
   todo: string;
   setTodo: React.Dispatch<React.SetStateAction<string>>;
+  
   handleAdd: (e: React.FormEvent) => void;
 }
 const TextField: React.FC<TextFieldProps> = ({ todo, setTodo, handleAdd }) => {
@@ -22,7 +23,7 @@ const TextField: React.FC<TextFieldProps> = ({ todo, setTodo, handleAdd }) => {
 
           <button
             type="submit"
-            className="absolute right-[0px]  text-[15px] text-[white] bg-[#2f74c0] rounded-[50px] h-[50px]  w-[50px] m-[17px] active:bg-black  "
+            className="absolute right-[0px]  text-[15px] text-[white] bg-[#2f74c0] rounded-[50px] h-[50px]  w-[50px] m-[17px] active:scale-[0.8] "
             style={{
               transition: "all .2s",
               boxShadow: "0 0 10px #000",
