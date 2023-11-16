@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.singleTodo {
+  display: grid !important;
+  grid-template-columns: 1fr 0.4fr !important;
+  background:url("https://img.freepik.com/free-photo/crumpled-yellow-paper-background-close-up_60487-2390.jpg?ext=jpg&size=626") !important ;
+}

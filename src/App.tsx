@@ -3,7 +3,7 @@ import "./App.css";
 import TextField from "./Components/TextField/TextField";
 import { Todo } from "./Model";
 import TodoList from "./Components/Todo/TodoList";
-import { DragDropContext, DropResult } from "react-beautiful-dnd";
+import { DragDropContext } from "react-beautiful-dnd";
 
 const App: React.FC = () => {
   const [todo, setTodo] = useState<string>("");
@@ -20,38 +20,41 @@ const App: React.FC = () => {
     }
   };
 
-  const onDragEnd = (result: DropResult) => {
-    console.log(result);
+  // Mock Service Worker with React
+  // const onDragEnd = (result: DropResult) => {
+  //   console.log(result);
 
-    const { destination, source } = result;
-    if (!destination) return;
+  //   const { destination, source } = result;
+  //   if (!destination) return;
 
-    if (
-      destination.droppableId === source.droppableId &&
-      destination.index === source.index
-    )
-      return;
+  //   if (
+  //     destination.droppableId === source.droppableId &&
+  //     destination.index === source.index
+  //   )
+  //     return;
 
-    let add;
-    let active = todos,
-      complete = completedTodos;
+  //   let add;
+  //   const active = todos;
+  //   const complete = completedTodos;
 
-    if (source.droppableId === "active") {
-      add = active[source.index];
-      active.splice(source.index, 1);
-    } else {
-      add = complete[source.index];
-      complete.splice(source.index, 1);
-    }
+  //   if (source.droppableId === "active") {
+  //     add = active[source.index];
+  //     active.splice(source.index, 1);
+  //   } else {
+  //     add = complete[source.index];
+  //     complete.splice(source.index, 1);
+  //   }
 
-    if (destination.droppableId === "active") {
-      active.splice(destination.index, 0, add);
-    } else {
-      complete.splice(destination.index, 0, add);
-    }
-    setCompletedTodos(complete);
-    setTodos(add);
-  };
+  //   if (destination.droppableId === "active") {
+  //     active.splice(destination.index, 0, add);
+  //   } else {
+  //     complete.splice(destination.index, 0, add);
+  //   }
+  //   setCompletedTodos(complete);
+  //   // setTodos(add);
+  // };
+  const onDragEnd = () => {};
+
   return (
     <>
       <DragDropContext onDragEnd={onDragEnd}>

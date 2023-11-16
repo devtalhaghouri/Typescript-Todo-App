@@ -53,15 +53,9 @@ const SingleTodo = ({ index, todo, todos, setTodos }: SingleTodoProps) => {
           <form
             onSubmit={(e) => handleEdit(e, todo.id)}
             className="singleTodo max-w-[545px] bg-[white] p-[20px] mt-[15px] rounded-[5px] w-[100%] shodow-lg transition-all hover:scale-[1.03]"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 0.4fr",
-              background:
-                "url(https://img.freepik.com/free-photo/crumpled-yellow-paper-background-close-up_60487-2390.jpg?ext=jpg&size=626)",
-            }}
+            ref={provided.innerRef}
             {...provided.draggableProps}
             {...provided.dragHandleProps}
-            ref={provided.innerRef}
           >
             {edit ? (
               <>
